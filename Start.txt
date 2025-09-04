@@ -1,0 +1,23 @@
+📝 Note for Users – One-Click Startup
+
+To start SpeakEasy quickly:
+
+Open the project folder and go to:
+
+backend\
+
+
+Double-click run_speakeasy.bat
+
+What it does:
+
+Activates the Python virtual environment
+
+Starts the backend server (FastAPI + Uvicorn)
+
+Opens the frontend (index.html) in your default browser
+
+Now you can type text, choose language/voice, and click Convert to Speech.
+Last 5 uses are saved in the session for quick access.
+
+No need to manually open terminal or run commands – just click & enjoy! 🎙️✨

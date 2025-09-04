@@ -1,0 +1,199 @@
+/* Reset and box sizing for all elements */
+* {
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    box-sizing: border-box; /* Makes width and height include padding/border */
+}
+
+/* Body styling */
+body {
+    font-family: 'Montserrat', 'Poppins', 'Arial', sans-serif; /* Modern fonts for headings & body */
+    background: linear-gradient(135deg, #040506, #050e11, #001017); /* Dark dreamy gradient background */
+    color: #fff; /* Text color white */
+    min-height: 100vh; /* Full viewport height */
+    display: flex; /* Flex for centering content */
+    justify-content: center; /* Horizontally center container */
+    align-items: flex-start; /* Align container to top */
+    padding: 40px 20px; /* Outer spacing */
+    animation: backgroundShift 15s ease-in-out infinite alternate; /* Smooth background shift animation */
+}
+
+/* Background animation keyframes */
+@keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main container styling */
+.container {
+    background: rgba(0, 0, 0, 0.9); /* Semi-transparent dark background */
+    padding: 30px 40px; /* Inner spacing */
+    border-radius: 25px; /* Rounded corners */
+    width: 100%; /* Full width */
+    max-width: 700px; /* Limit container width */
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5); /* Shadow for depth */
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
+    align-items: center; /* Center elements horizontally */
+    animation: fadeIn 1s ease forwards; /* Fade in animation on load */
+}
+
+/* Fade-in animation for container */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); } /* Start invisible & slightly up */
+    to { opacity: 1; transform: translateY(0); } /* End visible at normal position */
+}
+
+/* Heading styling */
+h1 {
+    text-align: center; /* Center heading */
+    margin-bottom: 25px; /* Space below heading */
+    font-size: 2.4em; /* Bigger font */
+    color: rgba(255, 255, 255, 0.733); /* Slightly transparent white */
+    text-shadow: 0 0 10px #000000, 0 0 20px #070707; /* Subtle shadow for glow effect */
+    animation: glow 5s ease-in-out infinite alternate; /* Glowing animation for heading */
+}
+
+/* Glow animation keyframes */
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #0a0a0a, 0 0 15px #0b0b0b; }
+    100% { text-shadow: 0 0 20px #070606, 0 0 40px #ff7e5f; }
+}
+
+/* Textarea styling */
+textarea {
+    width: 100%; /* Full width of container */
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 15px; /* Rounded edges */
+    border: none; /* Remove default border */
+    margin-bottom: 20px;
+    resize: none; /* Disable resizing */
+    background: rgba(255,255,255,0.05); /* Slight transparent background */
+    color: #fff; /* Text color */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    transition: all 0.3s ease; /* Smooth hover/focus transition */
+}
+
+/* Focus effect for textarea */
+textarea:focus {
+    background: rgba(255,255,255,0.1); /* Slightly brighter bg on focus */
+    box-shadow: 0 0 10px #ff7e5f; /* Glow shadow effect */
+    outline: none; /* Remove default outline */
+}
+
+/* Select dropdown styling */
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,0.05); /* Light transparent bg */
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Hover/focus effect for select */
+select:hover, select:focus {
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 0 10px #ff7e5f; /* Orange glow on hover/focus */
+}
+
+/* Button styling */
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient button */
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s ease, transform 0.3s ease; /* Smooth hover animations */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3); /* Shadow for depth */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f); /* Swap gradient */
+    transform: translateY(-3px) scale(1.05); /* Slight lift & scale */
+    box-shadow: 0 10px 25px rgba(255,126,95,0.7); /* Brighter shadow */
+}
+
+/* Audio player styling */
+audio {
+    width: 100%; /* Full width */
+    margin-top: 20px;
+    border-radius: 12px;
+    outline: none;
+    box-shadow: 0 0 15px rgba(255,255,255,0.3); /* Subtle glow */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for audio */
+audio:hover {
+    box-shadow: 0 0 25px rgba(255,126,95,0.7); /* Brighter shadow on hover */
+}
+
+/* History container styling */
+.history {
+    width: 100%;
+    background: rgba(255,255,255,0.05); /* Light transparent bg */
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    animation: fadeIn 1s ease forwards; /* Fade in on load */
+}
+
+/* History heading */
+.history h3 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    color: #ffeb; /* Slight yellowish-white */
+}
+
+/* Individual history item */
+.history-item {
+    background: rgba(0,0,0,0.5);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    display: flex; /* Flex for spacing text and links */
+    justify-content: space-between; /* Space between text & download link */
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for history item */
+.history-item:hover {
+    background: rgba(255,126,95,0.2); /* Slight orange overlay */
+    transform: translateX(5px); /* Slide slightly right */
+}
+
+/* Link inside history item */
+.history-item a {
+    color: #ffeb3b; /* Yellow link */
+    text-decoration: none; /* Remove underline */
+    font-weight: 600;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    button, select, textarea {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 15px;
+    }
+    .history-item {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start;
+    }
+}

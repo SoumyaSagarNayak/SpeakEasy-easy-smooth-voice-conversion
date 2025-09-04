@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- Declares that this document is an HTML5 document -->
+
+<html lang="en">
+<!-- Root HTML element; lang="en" tells browsers & search engines the language is English -->
+
+<head>
+    <!-- Head section contains metadata, title, links to CSS, fonts, etc. -->
+
+    <meta charset="UTF-8">
+    <!-- Sets character encoding to UTF-8 so all text symbols (English, Hindi, emojis) display correctly -->
+
+    <title>Text-to-Speech Pro</title>
+    <!-- The title of the webpage shown in browser tab -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Links external CSS file to style the webpage -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Import Poppins font from Google Fonts; used for clean, modern typography -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Import Montserrat + Poppins fonts for headings and body text -->
+</head>
+
+<body>
+    <!-- Body section contains all visible content on the webpage -->
+
+    <div class="container">
+        <!-- Main container div to center content and apply padding, background, and rounded corners -->
+
+        <h1>SpeakEasy – easy & smooth voice conversion</h1>
+        <!-- Main heading of the app; tells user the purpose of the app -->
+
+        <textarea id="textInput" rows="5" placeholder="Type your text here..."></textarea>
+        <!-- Textarea for user to type the text they want to convert to speech -->
+        <!-- id="textInput" allows JS to access this element -->
+        <!-- placeholder is a light hint shown inside the textarea -->
+
+        <div>
+            <!-- A small div to group language and voice selection dropdowns -->
+
+            <label for="langSelect">Language: </label>
+            <!-- Label for language dropdown; "for" links to the select's id -->
+
+            <select id="langSelect">
+                <!-- Dropdown to select the language -->
+                <option value="en">English</option>
+                <!-- Option value="en" used in JS to send language code to backend -->
+                <option value="hi">Hindi</option>
+                <!-- Option value="hi" for Hindi -->
+            </select>
+
+            <label for="voiceSelect">Voice: </label>
+            <!-- Label for voice selection dropdown -->
+
+            <select id="voiceSelect">
+                <!-- Dropdown to select type of voice -->
+                <option value="default">Default</option>
+                <option value="male">Male-ish</option>
+                <option value="female">Female-ish</option>
+            </select>
+        </div>
+
+        <button onclick="convertText()">Convert to Speech</button>
+        <!-- Button triggers JS function convertText() to send text to backend and play audio -->
+
+        <button onclick="downloadAudio()">Download Audio</button>
+        <!-- Button triggers JS function downloadAudio() to download the generated audio -->
+
+        <audio id="audioPlayer" controls></audio>
+        <!-- Audio element where generated speech is played -->
+        <!-- controls attribute shows play/pause, volume, progress bar -->
+
+        <div class="history">
+            <!-- Container for showing last 5 text-to-speech conversions -->
+
+            <h3>Last 5 Uses</h3>
+            <!-- Heading for history section -->
+
+            <div id="historyList"></div>
+            <!-- Empty div where JS will dynamically insert previous 5 conversions -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Link to external JavaScript file that handles all app functionality -->
+</body>
+</html>
