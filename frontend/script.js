@@ -22,7 +22,7 @@ async function convertText() {
 
     try {
         // Send POST request to backend TTS API
-        const response = await fetch('http://localhost:8000/tts', {
+        const response = await fetch('https://speakeasy-ow4p.onrender.com/tts', {
             method: 'POST',
             body: formData
         });
